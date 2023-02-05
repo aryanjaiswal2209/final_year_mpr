@@ -4,7 +4,9 @@ import {Link} from 'react-router-dom';
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
 import {FaBars} from 'react-icons/fa';
-import logins from './login'
+import { useHistory } from "react-router-dom";
+
+import login from './login1'
 
 const Nav = styled.nav`
     height:60px;
@@ -67,6 +69,7 @@ const NavBtn = styled.div`
 `;
 
 const Navbar = ({toggle}) => {
+    let history = useHistory();
     return (
         <Nav>
             <Logo to = '/'>ELIXR</Logo>
@@ -78,10 +81,12 @@ const Navbar = ({toggle}) => {
                     </NavMenuLinks>
                 ))}
             </NavMenu>
-            <NavBtn>
-                <Link to="/logins">
-                <Button primary="true">Sign In </Button>
-                </Link>
+            <NavBtn onClick={()=>{
+                history.push("/login")
+            }}>
+                
+                    <Button primary="true">Sign In </Button>
+                
             </NavBtn>
             
         </Nav>
