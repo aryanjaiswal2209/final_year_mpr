@@ -45,7 +45,11 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^18.0.27",
+    "autoprefixer": "^9.8.8",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

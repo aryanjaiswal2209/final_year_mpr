@@ -6,25 +6,42 @@ import GlobalStyle from './GlobalStyles';
 import DropDown from './components/DropDown'
 import InfoSection from './components/InfoSection';
 import {  InfoDataOne, InfoDataTwo } from './data/InfoData';
-
-
+import { render } from '@testing-library/react';
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+import login from './components/login'
 
 function App() {
   const [isOpen, setisOpen] = useState(false);
   const toggle = () => {
     setisOpen(!isOpen);
   }
-  return (
-    <> 
-      <GlobalStyle />    
-      <Navbar toggle={toggle}/>
-      <DropDown isOpen={isOpen} toggle={toggle}/>
-      <Hero slides={SliderData}/>
-      <InfoSection {...InfoDataOne}/>
-      <InfoSection {...InfoDataTwo}/>
-      
-    </>
-  );
+  
+    return (
+      <div> 
+        <Router>
+          <GlobalStyle />
+        </Router>
+        <Router>    
+          <Navbar toggle={toggle} />
+          <Route path="/login" exact/>
+        </Router>
+        <Router>
+          <DropDown isOpen={isOpen} toggle={toggle}/>
+        </Router>
+        <Router>
+          <Hero slides={SliderData}/>
+        </Router>
+        <Router>
+            <InfoSection {...InfoDataOne}/>
+        </Router>
+        <Router>
+            <InfoSection {...InfoDataTwo}/>
+        </Router>
+        
+        
+      </div>
+    );
+    
 }
 
 export default App;

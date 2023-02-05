@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import { menuData } from '../data/MenuData';
 import { Button } from './Button';
 import {FaBars} from 'react-icons/fa';
+import logins from './login'
 
 const Nav = styled.nav`
     height:60px;
@@ -78,7 +79,9 @@ const Navbar = ({toggle}) => {
                 ))}
             </NavMenu>
             <NavBtn>
-                <Button to ="/contact" primary='true'>Sign In</Button>
+                <Link to="/logins">
+                <Button primary="true">Sign In </Button>
+                </Link>
             </NavBtn>
             
         </Nav>
